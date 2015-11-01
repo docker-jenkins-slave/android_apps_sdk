@@ -35,7 +35,4 @@ RUN wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
       extra-google-play_licensing" && \
     rm -f android-sdk_r24.4.1-linux.tgz
 
-ENV ANDROID_HOME /opt/android-sdk-linux
-ENV PATH $PATH:$ANDROID_HOME/tools
-ENV PATH $PATH:$ANDROID_HOME/platform-tools
-ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
+ADD android-sdk.sh /etc/profile.d/
