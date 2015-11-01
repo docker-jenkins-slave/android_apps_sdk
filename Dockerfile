@@ -33,8 +33,7 @@ RUN wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
       extra-google-play_apk_expansion, \
       extra-google-play_billing, \
       extra-google-play_licensing" && \
-    cd && \
-    rm -f android/android-sdk_r24.4.1-linux.tgz
+    rm -f android-sdk_r24.4.1-linux.tgz
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
