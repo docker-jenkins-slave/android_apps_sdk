@@ -21,7 +21,7 @@ RUN dpkg --add-architecture i386 && \
 
 RUN wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
     tar -xzvf android-sdk_r24.4.1-linux.tgz -C /opt/ && \
-    echo "y" | /opt/android-sdk-linux/tools/android update sdk --no-ui -a --filter "\
+    echo "y" | /opt/android-sdk-linux/tools/android update sdk --no-ui --all --filter "\
       android-23, \
       tools, \
       platform-tools, \
@@ -29,10 +29,15 @@ RUN wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
       addon-google_apis-google-23, \
       extra-android-m2repository, \
       extra-android-support, \
+      extra-google-auto, \
       extra-google-google_play_services, \
+      extra-google-m2repository, \
       extra-google-play_apk_expansion, \
       extra-google-play_billing, \
       extra-google-play_licensing" && \
     rm -f android-sdk_r24.4.1-linux.tgz
 
+# provide environment for shell
 ADD android-sdk.sh /etc/profile.d/
+# provide android env for jenkins CI using env inject plugin
+ADD android-sdk.env /home/jenkins/
