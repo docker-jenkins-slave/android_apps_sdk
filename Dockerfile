@@ -1,4 +1,4 @@
-FROM jenkinsslave/base_jdk7
+FROM jenkinsslave/base_jdk8
 
 # To check which i386 dependencies are needed
 # objdump -x adb | grep NEEDED
