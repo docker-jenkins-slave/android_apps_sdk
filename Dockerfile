@@ -22,10 +22,10 @@ RUN dpkg --add-architecture i386 && \
 RUN wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
     tar -xzvf android-sdk_r24.4.1-linux.tgz -C /opt/ && \
     echo "y" | /opt/android-sdk-linux/tools/android update sdk --no-ui --all --filter "\
-      android-23, \
+      android-24, \
       tools, \
       platform-tools, \
-      build-tools-23.0.3, \
+      build-tools-24.0.0, \
       addon-google_apis-google-23, \
       extra-android-m2repository, \
       extra-android-support, \
